@@ -44,11 +44,11 @@ class _ProfilePageState extends State<ProfilePage> {
                   SizedBox(
                     width: 100,
                   ),
-                  Text("First name"),
+                  Text("First name: " + " Yengmoua"),
                   SizedBox(
                     width: 20,
                   ),
-                  Text("Last name"),
+                  Text("Last name" + "Yongpor"),
                 ],
               ),
               SizedBox(
