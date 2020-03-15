@@ -6,11 +6,15 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  Widget _backgroundColor() {
-    return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      color: Color.fromARGB(255, 242, 242, 242),
+
+  Widget _greenColors() {
+    return Positioned(
+      top: 0,
+      child: Container(
+        color: Colors.green,
+        height: 250,
+        width: MediaQuery.of(context).size.width,
+      ),
     );
   }
 
@@ -19,8 +23,8 @@ class _ProfilePageState extends State<ProfilePage> {
       top: 100,
       child: Container(
         margin: const EdgeInsets.all(20),
-        height: 240,
-        width: MediaQuery.of(context).size.width * 0.92,
+        height: 260,
+        width: MediaQuery.of(context).size.width * 0.90,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
@@ -42,13 +46,13 @@ class _ProfilePageState extends State<ProfilePage> {
                     radius: 60,
                   ),
                   SizedBox(
-                    width: 100,
+                    width: 20,
                   ),
-                  Text("First name: " + " Yengmoua"),
+                  Text("SS_Flutter"),
                   SizedBox(
                     width: 20,
                   ),
-                  Text("Last name" + "Yongpor"),
+                  Text("Dev"),
                 ],
               ),
               SizedBox(
@@ -61,7 +65,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   SizedBox(
                     width: 20,
                   ),
-                  Text("ymyfuturelifey@gmail.com")
+                  Text("ssflutterdev@gmail.com")
                 ],
               ),
             ],
@@ -73,11 +77,11 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Widget _userAdress() {
     return Positioned(
-      top: 360,
+      top: 380,
       child: Container(
         margin: EdgeInsets.all(20),
         height: 200,
-        width: MediaQuery.of(context).size.width * 0.92,
+        width: MediaQuery.of(context).size.width * 0.90,
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(20)),
         child: Container(
@@ -99,7 +103,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text("Dongdok"),
+                  Text("Nongnioa village"),
                 ],
               ),
               SizedBox(
@@ -112,7 +116,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text("Xaythany"),
+                  Text("Sikhottabong district"),
                 ],
               ),
               SizedBox(
@@ -125,7 +129,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   SizedBox(
                     width: 10,
                   ),
-                  Text("Vietiane"),
+                  Text("Vietiane capital"),
                 ],
               ),
             ],
@@ -139,12 +143,13 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        brightness: Brightness.light,
         title: Text(
           "Profile",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         elevation: 0,
-        backgroundColor: Color.fromARGB(255, 242, 242, 242),
+        backgroundColor: Colors.green,
         centerTitle: true,
         leading: IconButton(
           icon: Icon(
@@ -153,14 +158,20 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           onPressed: () {},
         ),
-        actions: <Widget>[Icon(Icons.add_shopping_cart, color: Colors.black)],
+        actions: <Widget>[IconButton(icon: Icon(Icons.add_shopping_cart, color: Colors.black),onPressed: (){},),],
       ),
-      body: Stack(
-        children: <Widget>[
-          _backgroundColor(),
-          _getInfo(),
-          _userAdress(),
-        ],
+      body: SingleChildScrollView(
+        child: Stack(
+          children: <Widget>[
+            Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+            ),
+            _greenColors(),
+            _getInfo(),
+            _userAdress(),
+          ],
+        ),
       ),
     );
   }
